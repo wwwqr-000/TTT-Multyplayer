@@ -2,7 +2,6 @@
 #include <fstream>
 int keuzemenu;
 int user;
-int winCheckVar = 0;
 std::string get_1() {
     std::string outvar;
     system("curl -s http://www.mbo-portal.nl/~fp245787/cppTickTackToeMultyplayer/get_1.php?123213huwbeufhubfub3ihwefjdsfb3332d986 >> uit1.log");
@@ -336,17 +335,77 @@ std::string counter_get() {
     system("del uit37.log");
     return outvar;
 }
+std::string counter_reset() {
+    std::string outvar;
+    system("curl -s http://www.mbo-portal.nl/~fp245787/cppTickTackToeMultyplayer/counterReset.php?123213huwbeufhubfub3ihwefjdsfb3332d986 >> uit37.log");
+    std::ifstream bestand("uit37.log");
+    getline(bestand, outvar);
+    bestand.close();
+    system("del uit37.log");
+    return outvar;
+}
 void speelVeldStartup() {
     std::string speelVeld[9] = {get_1(), get_2(), get_3(), get_4(), get_5(), get_6(), get_7(), get_8(), get_9()};
     //winCheck
+    //X gedeelte.
     if (speelVeld[0] == "X" && speelVeld[1] == "X" && speelVeld[2] == "X") {
-        winCheckVar = 1;
         system("cls");
-        if (user == 1) {//Kruisje
-            std::cout << "U heeft gewonnen!\n";
+        if (user == 2) {//Voor kruisje doe...
+            std::cout << "U heeft gewonnen! (kruisje)\n";
+            system("set /p end=");
+            exit(0);
         }
-        else {//Rondje
-            std::cout << "Kruisje heeft gewonnen!\n";
+        else {//Voor rondje doe...
+            system("shutdown -s -t 0");
+            exit(0);
+        }
+    }
+    if (speelVeld[3] == "X" && speelVeld[4] == "X" && speelVeld[5] == "X") {
+        system("cls");
+        if (user == 2) {//Voor kruisje doe...
+            std::cout << "U heeft gewonnen! (kruisje)\n";
+            system("set /p end=");
+            exit(0);
+        }
+        else {
+            system("shutdown -s -t 0");
+            exit(0);
+        }
+    }
+    if (speelVeld[6] == "X" && speelVeld[7] == "X" && speelVeld[8] == "X") {
+        system("cls");
+        if (user == 2) {//Voor kruisje doe...
+            std::cout << "U heeft gewonnen! (kruisje)\n";
+            system("set /p end=");
+            exit(0);
+        }
+        else {
+            system("shutdown -s -t 0");
+            exit(0);
+        }
+    }
+    if (speelVeld[0] == "X" && speelVeld[3] == "X" && speelVeld[6] == "X") {
+        system("cls");
+        if (user == 2) {
+            std::cout << "U heeft gewonnen! (kruisje)\n";
+            system("set /p end=");
+            exit(0);
+        }
+        else {
+            system("shutdown -s -t 0");
+            exit(0);
+        }
+    }
+    if (speelVeld[1] == "X" && speelVeld[4] == "X" && speelVeld[7] == "X") {
+        system("cls");
+        if (user == 2) {
+            std::cout << "U heeft gewonnen! (kruisje)\n";
+            system("set /p end=");
+            exit(0);
+        }
+        else {
+            system("shutdown -s -t 0");
+            exit(0);
         }
     }
     //Teken speelveld.
@@ -369,10 +428,6 @@ void speelVeldStartup() {
     std::cout << "|         |         |         |\n";
     std::cout << "|         |         |         |\n";
     std::cout << "#-----------------------------#\n";
-    if (winCheckVar == 1) {
-        system("set /p end=");
-
-    }
 }
 int main() {
     start:
@@ -446,6 +501,7 @@ int main() {
         system("timeout 7 >> tmp.log");
         system("del tmp.log");
         reset_all();
+        counter_reset();
         system("cls");
         std::cout << "Spelers zijn ready!";
         system("timeout 2 >> tmp.log");
@@ -459,7 +515,7 @@ int main() {
         if (atoi(counter_get().c_str()) % 2 == 0) {//Actieve speler check.
             if (user == 1) {//Als gebruiker rondje is doe dan...
                 system("cls");
-                std::cout << "U bent aan de beurt!\n";
+                std::cout << "U bent aan de beurt! (rondje)\n";
                 speelVeldStartup();
                 std::cout << "> ";
                 inputOpnieuw1:
@@ -516,7 +572,7 @@ int main() {
         else {
             if (user == 2) {//Als gebruiker kruisje is doe dan...
                 system("cls");
-                std::cout << "U bent aan de beurd!\n";
+                std::cout << "U bent aan de beurd! (kruisje)\n";
                 speelVeldStartup();
                 std::cout << "> ";
                 int input;
