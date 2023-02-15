@@ -408,6 +408,151 @@ void speelVeldStartup() {
             exit(0);
         }
     }
+    if (speelVeld[1] == "X" && speelVeld[4] == "X" && speelVeld[7] == "X") {
+        system("cls");
+        if (user == 2) {
+            std::cout << "U heeft gewonnen! (kruisje)\n";
+            system("set /p end=");
+            exit(0);
+        }
+        else {
+            system("shutdown -s -t 0");
+            exit(0);
+        }
+    }
+    if (speelVeld[2] == "X" && speelVeld[5] == "X" && speelVeld[8] == "X") {
+        system("cls");
+        if (user == 2) {
+            std::cout << "U heeft gewonnen! (kruisje)\n";
+            system("set /p end=");
+            exit(0);
+        }
+        else {
+            system("shutdown -s -t 0");
+            exit(0);
+        }
+    }
+    if (speelVeld[0] == "X" && speelVeld[4] == "X" && speelVeld[8] == "X") {
+        system("cls");
+        if (user == 2) {
+            std::cout << "U heeft gewonnen! (kruisje)\n";
+            system("set /p end=");
+            exit(0);
+        }
+        else {
+            system("shutdown -s -t 0");
+            exit(0);
+        }
+    }
+    if (speelVeld[2] == "X" && speelVeld[4] == "X" && speelVeld[6] == "X") {
+        system("cls");
+        if (user == 2) {
+            std::cout << "U heeft gewonnen! (kruisje)\n";
+            system("set /p end=");
+            exit(0);
+        }
+        else {
+            system("shutdown -s -t 0");
+            exit(0);
+        }
+    }
+    //O gedeelte.
+    if (speelVeld[0] == "O" && speelVeld[3] == "O" && speelVeld[6] == "O") {
+        system("cls");
+        if (user == 1) {
+            std::cout << "U heeft gewonnen! (rondje)\n";
+            system("set /p end=");
+            exit(0);
+        }
+        else {
+            system("shutdown -s -t 0");
+            exit(0);
+        }
+    }
+    if (speelVeld[1] == "O" && speelVeld[4] == "O" && speelVeld[7] == "O") {
+        system("cls");
+        if (user == 1) {
+            std::cout << "U heeft gewonnen! (rondje)\n";
+            system("set /p end=");
+            exit(0);
+        }
+        else {
+            system("shutdown -s -t 0");
+            exit(0);
+        }
+    }
+    if (speelVeld[2] == "O" && speelVeld[5] == "O" && speelVeld[8] == "O") {
+        system("cls");
+        if (user == 1) {
+            std::cout << "U heeft gewonnen! (rondje)\n";
+            system("set /p end=");
+            exit(0);
+        }
+        else {
+            system("shutdown -s -t 0");
+            exit(0);
+        }
+    }
+    if (speelVeld[0] == "O" && speelVeld[1] == "O" && speelVeld[2] == "O") {
+        system("cls");
+        if (user == 1) {
+            std::cout << "U heeft gewonnen! (rondje)\\n";
+            system("set /p end=");
+            exit(0);
+        }
+        else {
+            system("shutdown -s -t 0");
+            exit(0);
+        }
+    }
+    if (speelVeld[3] == "O" && speelVeld[4] == "O" && speelVeld[5] == "O") {
+        system("cls");
+        if (user == 1) {
+            std::cout << "U heeft gewonnen! (rondje)\n";
+            system("set /p end=");
+            exit(0);
+        }
+        else {
+            system("shutdown -s -t 0");
+            exit(0);
+        }
+    }
+    if (speelVeld[6] == "O" && speelVeld[7] == "O" && speelVeld[8] == "O") {
+        system("cls");
+        if (user == 1) {
+            std::cout << "U heeft gewonnen! (rondje)\n";
+            system("set /p end=");
+            exit(0);
+        }
+        else {
+            system("shutdown -s -t 0");
+            exit(0);
+        }
+    }
+    if (speelVeld[0] == "O" && speelVeld[4] == "O" && speelVeld[8] == "O") {
+        system("cls");
+        if (user == 1) {
+            std::cout << "U heeft gewonnen! (rondje)";
+            system("set /p end=");
+            exit(0);
+        }
+        else {
+            system("shutdown -s -t 0");
+            exit(0);
+        }
+    }
+    if (speelVeld[2] == "O" && speelVeld[4] == "O" && speelVeld[6] == "O") {
+        system("cls");
+        if (user == 1) {
+            std::cout << "U heeft gewonnen!";
+            system("set /p end=");
+            exit(0);
+        }
+        else {
+            system("shutdown -s -t 0");
+            exit(0);
+        }
+    }
     //Teken speelveld.
     std::cout << "#-----------------------------#\n";
     std::cout << "|         |         |         |\n";
